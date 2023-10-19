@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+</head>
+<body>
+    <container class="cont">
+        <div class="cardUsuario">
+        <a class="link" href="../">Voltar</a><br><br>
+        <form id="userForm">
+            <label for="Nome">Nome:</label>
+            <input class="campo" type="text" id="nome" name="nome" required>
+            <label for="Email">Email:</label>
+            <input class="campo" type="text" id="email" name="email" required>
+            <label for="Senha">Senha:</label>
+            <input class="campo" type="text" id="senha" name="senha" required><br>
+
+            <h3>Dados de Endereço</h3>
+            <label for="cep">CEP:</label>
+            <input class="campo" type="text" id="cep" name="cep" value="" size="10" maxlength="9"
+            onblur="pesquisacep(this.value);"/><br>
+            <label for="rua">Rua:</label>
+            <input class="campo" type="text" id="rua" name="rua"/>
+            <label for="bairro">Bairro:</label>
+            <input class="campo" type="text" id="bairro" name="bairro"/>
+            <label for="cidade">Cidade:</label>
+            <input class="campo" type="text" id="cidade"/><br>
+            <label for="uf">Estado:</label>
+            <input class="campo" type="text" id="uf" name="uf"/><br>
+            <label for="IBGE">IBGE:</label>
+            <input class="campo" type="text" id="ibge" name="IBGE"/><br>
+        
+
+
+            <button class="botao" type="button" id="submitButton">Criar Usuário</button>
+        </form>
+        </div>
+        <div id="mapid"></div><br>
+
+    </container>
+
+<script src="js/cep.js"></script>
+<script src="js/script.js"></script>
+<script src="js/createUser.js"></script>
+<script src="js/leaflet.js"></script>
+</body>
+</html>

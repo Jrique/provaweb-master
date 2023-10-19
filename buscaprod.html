@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gerenciamento de Usuários</title>
+</head>
+<body>
+
+    <div class="card">
+    <a class="link" href="../">Voltar</a>
+    <h3>Buscar Produto</h3>
+    <label for="getProdId">ID do Produto:</label>
+    <input class="campo" type="number" id="getProdId"><br>
+    <button class="botao" onclick="getProd()">Buscar</button>
+
+    <h3>Gerenciar Produto</h3>
+    <label for="inpuNome">Nome:</label>
+    <input class="campo" type="text" id="inpuNome">
+    <label for="inpupreco">Preço:</label>
+    <input class="campo" type="text" id="inpupreco">
+    <label for="inpuquantidade">Quantidade:</label>
+    <input class="campo" type="text" id="inpuquantidade">
+    <div>
+        <button class="botao" onclick="updateProd()">Atualizar</button>
+        <button class="botao" onclick="deleteProd()">Excluir</button>
+    </div>
+</div>
+
+<script src="js/getProd.js"></script>
+<script src="js/updateProd.js"></script>
+<script src="js/deleteProd.js"></script>
+</body>
+</html>
