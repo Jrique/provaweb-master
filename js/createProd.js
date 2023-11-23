@@ -1,22 +1,28 @@
-document.getElementById('submitButton').addEventListener('click', createUser);
+document.getElementById('submitButton').addEventListener('click', createProduto);
+function createProduto() {
+    const nomeProduto = document.getElementById('nomeprod').value;
+    const precoProduto = document.getElementById('precoprod').value;
+    const quantidadeProduto = document.getElementById('quantidadeprod').value;
 
-
-function createUser() {
-    const nomeprod = document.getElementById('nomeprod').value;
-    const precoprod = document.getElementById('precoprod').value;
-    const quantidadeprod = document.getElementById('quantidadeprod').value;
-
-
-    if (!nomeprod) {
+    if (!nomeProduto) {
         alert("Por favor, insira um nome!");
         return;
     }
 
-    const usuario = {
-        nome: nomeprod,
-        preco: precoprod,
-        quantidade: quantidadeprod
+    if (!precoProduto) {
+        alert("Por favor, insira um preco!");
+        return;
+    }
 
+    if (!quantidadeProduto) {
+        alert("Por favor, insira uma quantidade!");
+        return;
+    }
+
+    const Produto = {
+        nome: nomeProduto,
+        preco: precoProduto,
+        quantidade: quantidadeProduto
     };
 
     fetch('/backend/produtos.php', { 
@@ -24,7 +30,7 @@ function createUser() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(usuario)
+        body: JSON.stringify(Produto)
     })
     .then(response => {
         if (!response.ok) {
@@ -38,12 +44,19 @@ function createUser() {
     })
     .then(data => {
         if(!data.status){
-            alert('Produto já existe')
+            Swal.fire(
+                'Este produto já existe!',
+                'Por favor, cadastre um novo produto!',
+                'error'
+              )
         }else{
-            alert("Produto criado: " + JSON.stringify(data));
+            Swal.fire(
+                'Boa!',
+                'Produto criado com sucesso!',
+                'success'
+              )
         } 
        
     })
     .catch(error => alert('Erro na requisição: ' + error));
 }
-

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Usuário</title>
+    <script src="js/valida.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,18 +12,28 @@
         <h1>Escolha a Opção</h1><br>
         <a class="link" href="criaruser.html">Cadastrar Usuários</a><br>
         <a class="link" href="todosuser.html">Listar todos os Usuários</a><br>
-        <a class="link" href="buscauser.html">Buscar Usuários</a><br><br>
+        <a class="link" href="buscauser.html">Buscar Usuários</a><br>
+        <a class="link" href="login.html">Logar</a><br><br>
         <a class="link" href="criarprod.html">Cadastrar Produto</a><br>
         <a class="link" href="todosprod.html">Listar todos os Produtos</a><br>
+        <a class="link" href="grafico.html">Grafico</a><br>
+        <a class="link" href="prodUser.html">Produto e Usuário</a><br>
         <a class="link" href="buscaprod.html">Buscar Produtos</a>
+
     </div>
+
     <script>
         window.onload = function() {
             fetch('/backend/token')
                 .then(response => response.json())
                 .then(data => localStorage.setItem('token', data.token));
         }
-        
     </script>
+    <script src="
+     https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js
+     "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css
+     " rel="stylesheet">
 </body>
 </html>

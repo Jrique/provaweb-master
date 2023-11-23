@@ -1,9 +1,10 @@
 <?php
-namespace App\Usuario;
+namespace App\Model;
 class Usuario {
     private $id;
     private $nome;
     private $email;
+    private $datanascimento;
     private $senha;
 
     public function __construct() {
@@ -25,10 +26,16 @@ class Usuario {
         $this->nome = $nome;
     }
     public function getEmail() {
-        return $this->nome;
+        return $this->email;
     }
     public function setEmail($email) {
         $this->email = $email;
+    }
+    public function getDataNascimento() {
+        return $this->datanascimento;
+    }
+    public function setDataNascimento($datanascimento) {
+        $this->datanascimento = $datanascimento;
     }
     public function setSenha($senha) {
         $this->senha = password_hash($senha, PASSWORD_DEFAULT);
