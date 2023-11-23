@@ -8,9 +8,9 @@ use ReflectionException;
 use ReflectionProperty;
  class Model {
  private $host = "localhost";
- private $db_name = "banco";
+ private $db_name = "test_drive";
  private $username = "root";
- private $password = "";
+ private $password = "root123";
  private $conn;
  private $db_type = "mysql"; // Opções: "mysql", "pgsql", "sqlite", "mssql"
 
